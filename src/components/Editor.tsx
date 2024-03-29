@@ -6,7 +6,7 @@ import { Editor as MonacoEditor } from "@monaco-editor/react";
 const Editor: React.FC = () => {
   return (
     <div>
-      <MonacoEditor height="90vh" language="javascript" value="//somecomment" />
+      <MonacoEditor height="90vh" language="python" value="//somecomment" />
     </div>
   );
 };
