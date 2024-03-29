@@ -1,10 +1,10 @@
 import Image from "next/image";
-import IntegratedIDE from "@/components/IntegratedIDE";
+import Editor from "@/components/Editor";
 
 export default function Home() {
   return (
     <div>
-      <IntegratedIDE />
+      <Editor />
     </div>
   );
 }
