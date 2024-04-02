@@ -2,8 +2,9 @@
 
 import React, { useState, useRef } from "react";
 import { Editor as MonacoEditor } from "@monaco-editor/react";
-import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "@/constants";
+import LanguageSelector from "./LanguageSelector";
+import Output from "./Output";
 
 const Editor: React.FC = () => {
   const editorRef = useRef<any | null>(null);
@@ -34,6 +35,7 @@ const Editor: React.FC = () => {
           console.log(value);
         }}
       />
+      <Output editorRef={editorRef} language={language} />
     </div>
   );
 };
