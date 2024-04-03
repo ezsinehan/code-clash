@@ -30,7 +30,7 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
 
   return (
     <div>
-      <h1>Output</h1>
+     <h1>Output</h1>
       <button disabled={isLoading} onClick={runCode}>
         {isLoading ? "Loading..." : "Run Code"}
       </button>

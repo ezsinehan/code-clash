@@ -22,10 +22,9 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     <div>
       <h1>Language Selector</h1>
       <select value={language} onChange={handleLanguageChange}>
-        <option value="">Select a Language</option>
         {Languages.map(([language, version]) => (
           <option key={language} value={language}>
-            {language} - {version}
+            {language} - {version} 
           </option>
         ))}
       </select>
