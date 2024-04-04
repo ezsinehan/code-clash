@@ -1,4 +1,5 @@
 import { executecode } from "@/api";
+import { TEST_CASES } from "@/constants";
 import React, { useState } from "react";
 
 interface OutputProps {
@@ -11,8 +12,11 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
 
+  const hiddenTests = TEST_CASES[language];
+
   const runCode = async () => {
-    const sourceCode: string = editorRef.current.getValue();
+    let sourceCode: string = editorRef.current.getValue();
+    sourceCode += hiddenTests;
     if (!sourceCode) return;
     setIsLoading(true);
     setIsError(false);
@@ -30,7 +34,7 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
 
   return (
     <div>
-     <h1>Output</h1>
+      <h1>Output</h1>
       <button disabled={isLoading} onClick={runCode}>
         {isLoading ? "Loading..." : "Run Code"}
       </button>
