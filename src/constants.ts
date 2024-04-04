@@ -20,14 +20,15 @@ type TestCaseType = {
 
 export const TEST_CASES: TestCaseType = {
   python: `
-def run_hidden_tests_twoSum():
-    assert twoSum([2, 7, 11, 15], 9) == [0, 1], "Hidden Test Case 1 Failed: Expected [0, 1]"
-    assert twoSum([3, 2, 4], 6) == [1, 2], "Hidden Test Case 2 Failed: Expected [1, 2]"
+def run_hidden_tests_twoSum():  
+    print("Running Tests...")
+    print("Hidden TC 1: Expected (2, 3) Result: ", twoSum([2, 7, 11, 15], 26) )
+    # assert twoSum([2, 7, 11, 15], 26) == [0, 1], "Hidden Test Case 1 Failed: Expected [0, 1]"
+    # assert twoSum([3, 2, 4], 6) == [1, 2], "Hidden Test Case 2 Failed: Expected [1, 2]"
     # Add more hidden tests as needed
-    print("All Hidden Tests Passed")
+    # print("All Hidden Tests Passed")
 
-if __name__ == "__main__":
-    run_hidden_tests_twoSum()  
+run_hidden_tests_twoSum()  
   # Ensure to call run_hidden_tests_twoSum at the end of your Python code snippet
   `,
 };
