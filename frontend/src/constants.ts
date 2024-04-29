@@ -3,7 +3,7 @@ type LanguageVersionType = {
 };
 
 export const LANGUAGE_VERSIONS: LanguageVersionType = {
-  python: "3.10.0",
+  python: "3.12.0",
 };
 
 type CodeSnippetsType = {

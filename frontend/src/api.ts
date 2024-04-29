@@ -7,7 +7,7 @@ interface APIProps {
 }
 
 const API = axios.create({
-  baseURL: "http://localhost:2000/api/v2/piston",
+  baseURL: "http://localhost:2000/api/v2",
 });
 
 // https://emkc.org/api/v2/piston
