@@ -1,4 +1,4 @@
-## CODE-CLASH COMING SOON
+## Development Plan
 
 ### Phase 1: Core Development
 
@@ -23,6 +23,7 @@
 - **Load Testing and Optimization**: Conduct thorough load testing to identify performance bottlenecks and optimize both frontend and backend components.
 - **Scalable Infrastructure**: Transition to a scalable cloud infrastructure that can dynamically adjust to load changes, possibly using services like AWS, Azure, or Google Cloud.
 - **Caching and State Management**: Implement caching strategies and state management to reduce load times and improve user experience.
+- **External Hosting for Piston**: Choose a cloud provider and set up Piston on virtual machines or containers to ensure scalability and reliability. Implement load balancers, auto-scaling, and monitoring to efficiently manage the workload.
 
 ### Phase 5: Community and Ecosystem
 
