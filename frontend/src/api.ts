@@ -7,12 +7,12 @@ interface APIProps {
 }
 
 const API = axios.create({
-  baseURL: "http://localhost:2000/api/v2",
+  baseURL: "http://localhost:2000",
 });
 
 // https://emkc.org/api/v2/piston
 export const executecode = async ({ language, sourceCode }: APIProps) => {
-  const response = await API.post("/execute", {
+  const response = await API.post("/api/v2/execute", {
     language: language,
     version: LANGUAGE_VERSIONS[language],
     files: [
