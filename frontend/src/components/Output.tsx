@@ -15,15 +15,23 @@ const Output: React.FC<OutputProps> = ({ editorRef, language }) => {
   const hiddenTests = TEST_CASES[language];
 
   const runCode = async () => {
+    if (!editorRef.current) {
+      console.error("Editor is not init");
+      return;
+    }
     let sourceCode: string = editorRef.current.getValue();
-    sourceCode += hiddenTests;
+    // sourceCode += hiddenTests || "";
     if (!sourceCode) return;
     setIsLoading(true);
     setIsError(false);
     try {
-      const { run: result } = await executecode({ language, sourceCode });
-      setOutput(result.output ? result.output.split("\n") : []);
-      setIsError(!!result.stderr);
+      const response = await executecode({ language, sourceCode });
+      if (response.run) {
+        setOutput(response.output ? response.output.split("\n") : []);
+        setIsError(!!response.stderr);
+      } else {
+        setIsError(true);
+      }
     } catch (error) {
       console.log(error);
       setIsError(true);

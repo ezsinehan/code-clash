@@ -7,12 +7,13 @@ interface APIProps {
 }
 
 const API = axios.create({
-  baseURL: "http://localhost:2000",
+  baseURL: process.env.REACT_APP_BACKEND_URL || "http://localhost:3001",
 });
 
 // https://emkc.org/api/v2/piston
 export const executecode = async ({ language, sourceCode }: APIProps) => {
-  const response = await API.post("/api/v2/execute", {
+  console.log("Sending to backend:", { language, sourceCode });
+  const response = await API.post("/execute", {
     language: language,
     version: LANGUAGE_VERSIONS[language],
     files: [
